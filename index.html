@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sokha&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Sokha&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Sokha&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sokha&#39;s Blog">
+  
+    <link rel="alternate" href="/atom.xml" title="Sokha&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sokha&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">世上无难事,只要肯放弃</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-jq" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/16/jq/" class="article-date">
+  <time datetime="2016-08-16T13:33:42.000Z" itemprop="datePublished">2016-08-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/jq/">jq</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p><a href="">Table of Content</a></p>
+</li>
+<li><p>​</p>
+<p>\1. jQuery特殊属性操作</p>
+<ul>
+<li><a href="#101">1.1. val方法</a></li>
+<li><a href="#102">1.2. html方法与text方法</a></li>
+<li><a href="#103">1.3. width方法与height方法</a></li>
+<li><a href="#104">1.4. scrollTop与scrollLeft</a></li>
+<li><a href="#105">1.5. offset方法与position方法</a></li>
+</ul>
+</li>
+<li><p>​</p>
+<p>\2. jQuery事件机制</p>
+<ul>
+<li><a href="#201">2.1. jQuery事件发展历程(了解)</a></li>
+<li><a href="#202">2.2. on注册事件(重点)</a></li>
+<li><a href="#203">2.3. 事件解绑</a></li>
+<li><a href="#204">2.4. 触发事件</a></li>
+<li><a href="#205">2.5. jQuery事件对象</a></li>
+</ul>
+</li>
+<li><p>​</p>
+<p>\3. jQuery补充知识点</p>
+<ul>
+<li><a href="#301">3.1. 链式编程</a></li>
+<li><a href="#302">3.2. each方法</a></li>
+<li><a href="#303">3.3. 多库共存</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="1-jQuery特殊属性操作"><a href="#1-jQuery特殊属性操作" class="headerlink" title="1. jQuery特殊属性操作"></a>1. jQuery特殊属性操作</h1><h2 id="1-1-val方法"><a href="#1-1-val方法" class="headerlink" title="1.1. val方法"></a>1.1. val方法</h2><blockquote>
+<p>val方法用于设置和获取表单元素的值，例如input、textarea的值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//设置值</div><div class="line">$(&quot;#name&quot;).val(“张三”);</div><div class="line">//获取值</div><div class="line">$(&quot;#name&quot;).val();</div></pre></td></tr></table></figure>
+<p>【案例：京东搜索.html】</p>
+<h2 id="1-2-html方法与text方法"><a href="#1-2-html方法与text方法" class="headerlink" title="1.2. html方法与text方法"></a>1.2. html方法与text方法</h2><blockquote>
+<p>html方法相当于innerHTML text方法相当于innerText</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//设置内容</div><div class="line">$(“div”).html(“&lt;span&gt;这是一段内容&lt;/span&gt;”);</div><div class="line">//获取内容</div><div class="line">$(“div”).html()</div><div class="line"></div><div class="line">//设置内容</div><div class="line">$(“div”).text(“&lt;span&gt;这是一段内容&lt;/span&gt;”);</div><div class="line">//获取内容</div><div class="line">$(“div”).text()</div></pre></td></tr></table></figure>
+<p>区别：html方法会识别html标签，text方法会那内容直接当成字符串，并不会识别html标签。</p>
+<h2 id="1-3-width方法与height方法"><a href="#1-3-width方法与height方法" class="headerlink" title="1.3. width方法与height方法"></a>1.3. width方法与height方法</h2><blockquote>
+<p>设置或者获取高度</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//带参数表示设置高度</div><div class="line">$(“img”).height(200);</div><div class="line">//不带参数获取高度</div><div class="line">$(“img”).height();</div></pre></td></tr></table></figure>
+<p>获取网页的可视区宽高</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获取可视区宽度</div><div class="line">$(window).width();</div><div class="line">//获取可视区高度</div><div class="line">$(window).height();</div></pre></td></tr></table></figure>
+<h2 id="1-4-scrollTop与scrollLeft"><a href="#1-4-scrollTop与scrollLeft" class="headerlink" title="1.4. scrollTop与scrollLeft"></a>1.4. scrollTop与scrollLeft</h2><blockquote>
+<p>设置或者获取垂直滚动条的位置</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获取页面被卷曲的高度</div><div class="line">$(window).scrollTop();</div><div class="line">//获取页面被卷曲的宽度</div><div class="line">$(window).scrollLeft();</div></pre></td></tr></table></figure>
+<p>【案例：仿腾讯固定菜单栏案例】 【案例：小火箭返航案例】</p>
+<h2 id="1-5-offset方法与position方法"><a href="#1-5-offset方法与position方法" class="headerlink" title="1.5. offset方法与position方法"></a>1.5. offset方法与position方法</h2><blockquote>
+<p>offset方法获取元素距离document的位置，position方法获取的是元素距离有定位的父元素的位置。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获取元素距离document的位置,返回值为对象：&#123;left:100, top:100&#125;</div><div class="line">$(selector).offset();</div><div class="line">//获取相对于其最近的有定位的父元素的位置。</div><div class="line">$(selector).position();</div></pre></td></tr></table></figure>
+<h1 id="2-jQuery事件机制"><a href="#2-jQuery事件机制" class="headerlink" title="2. jQuery事件机制"></a>2. jQuery事件机制</h1><blockquote>
+<p>JavaScript中已经学习过了事件，但是jQuery对JavaScript事件进行了封装，增加并扩展了事件处理机制。jQuery不仅提供了更加优雅的事件处理语法，而且极大的增强了事件的处理能力。</p>
+</blockquote>
+<h2 id="2-1-jQuery事件发展历程-了解"><a href="#2-1-jQuery事件发展历程-了解" class="headerlink" title="2.1. jQuery事件发展历程(了解)"></a>2.1. jQuery事件发展历程(了解)</h2><p>简单事件绑定&gt;&gt;bind事件绑定&gt;&gt;delegate事件绑定&gt;&gt;on事件绑定(推荐)</p>
+<blockquote>
+<p>简单事件注册</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; click(handler)            单击事件</div><div class="line">&gt; mouseenter(handler)        鼠标进入事件</div><div class="line">&gt; mouseleave(handler)        鼠标离开事件</div><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>缺点：不能同时注册多个事件</p>
+<p>bind方式注册事件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//第一个参数：事件类型</div><div class="line">//第二个参数：事件处理程序</div><div class="line">$(&quot;p&quot;).bind(&quot;click mouseenter&quot;, function()&#123;</div><div class="line">    //事件响应方法</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>缺点：不支持动态事件绑定</p>
+<blockquote>
+<p>delegate注册委托事件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 第一个参数：selector，要绑定事件的元素</div><div class="line">// 第二个参数：事件类型</div><div class="line">// 第三个参数：事件处理函数</div><div class="line">$(&quot;.parentBox&quot;).delegate(&quot;p&quot;, &quot;click&quot;, function()&#123;</div><div class="line">    //为 .parentBox下面的所有的p标签绑定事件</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>缺点：只能注册委托事件，因此注册时间需要记得方法太多了</p>
+<blockquote>
+<p>on注册事件</p>
+</blockquote>
+<h2 id="2-2-on注册事件-重点"><a href="#2-2-on注册事件-重点" class="headerlink" title="2.2. on注册事件(重点)"></a>2.2. on注册事件(重点)</h2><blockquote>
+<p>jQuery1.7之后，jQuery用on统一了所有事件的处理方法。</p>
+<p>最现代的方式，兼容zepto(移动端类似jQuery的一个库)，强烈建议使用。</p>
+</blockquote>
+<p>on注册简单事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 表示给$(selector)绑定事件，并且由自己触发，不支持动态绑定。</div><div class="line">$(selector).on( &quot;click&quot;, function() &#123;&#125;);</div></pre></td></tr></table></figure>
+<p>on注册委托事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 表示给$(selector)绑定代理事件，当必须是它的内部元素span才能触发这个事件，支持动态绑定</div><div class="line">$(selector).on( &quot;click&quot;,“span”, function() &#123;&#125;);</div></pre></td></tr></table></figure>
+<p>on注册事件的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 第一个参数：events，绑定事件的名称可以是由空格分隔的多个事件（标准事件或者自定义事件）</div><div class="line">// 第二个参数：selector, 执行事件的后代元素（可选），如果没有后代元素，那么事件将有自己执行。</div><div class="line">// 第三个参数：data，传递给处理函数的数据，事件触发的时候通过event.data来使用（不常使用）</div><div class="line">// 第四个参数：handler，事件处理函数</div><div class="line">$(selector).on(events[,selector][,data],handler);</div></pre></td></tr></table></figure>
+<h2 id="2-3-事件解绑"><a href="#2-3-事件解绑" class="headerlink" title="2.3. 事件解绑"></a>2.3. 事件解绑</h2><blockquote>
+<p>unbind方式（不用）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(selector).unbind(); //解绑所有的事件</div><div class="line">$(selector).unbind(&quot;click&quot;); //解绑指定的事件</div></pre></td></tr></table></figure>
+<blockquote>
+<p>undelegate方式（不用）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$( selector ).undelegate(); //解绑所有的delegate事件</div><div class="line">$( selector).undelegate( “click” ); //解绑所有的click事件</div></pre></td></tr></table></figure>
+<blockquote>
+<p>off方式（推荐）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 解绑匹配元素的所有事件</div><div class="line">$(selector).off();</div><div class="line">// 解绑匹配元素的所有click事件</div><div class="line">$(selector).off(&quot;click&quot;);</div></pre></td></tr></table></figure>
+<h2 id="2-4-触发事件"><a href="#2-4-触发事件" class="headerlink" title="2.4. 触发事件"></a>2.4. 触发事件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(selector).click(); //触发 click事件</div><div class="line">$(selector).trigger(&quot;click&quot;);</div></pre></td></tr></table></figure>
+<h2 id="2-5-jQuery事件对象"><a href="#2-5-jQuery事件对象" class="headerlink" title="2.5. jQuery事件对象"></a>2.5. jQuery事件对象</h2><p>jQuery事件对象其实就是js事件对象的一个封装，处理了兼容性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//screenX和screenY    对应屏幕最左上角的值</div><div class="line">//clientX和clientY    距离页面左上角的位置（忽视滚动条）</div><div class="line">//pageX和pageY    距离页面最顶部的左上角的位置（会计算滚动条的距离）</div><div class="line"></div><div class="line">//event.keyCode    按下的键盘代码</div><div class="line">//event.data    存储绑定事件时传递的附加数据</div><div class="line"></div><div class="line">//event.stopPropagation()    阻止事件冒泡行为</div><div class="line">//event.preventDefault()    阻止浏览器默认行为</div><div class="line">//return false:既能阻止事件冒泡，又能阻止浏览器默认行为。</div></pre></td></tr></table></figure>
+<p>【案例：钢琴版导航（加强）.html】</p>
+<h1 id="3-jQuery补充知识点"><a href="#3-jQuery补充知识点" class="headerlink" title="3. jQuery补充知识点"></a>3. jQuery补充知识点</h1><h2 id="3-1-链式编程"><a href="#3-1-链式编程" class="headerlink" title="3.1. 链式编程"></a>3.1. 链式编程</h2><blockquote>
+<p>通常情况下，只有设置操作才能把链式编程延续下去。因为获取操作的时候，会返回获取到的相应的值，无法返回 jQuery对象。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">end(); // 筛选选择器会改变jQuery对象的DOM对象，想要回复到上一次的状态，并且返回匹配元素之前的状态。</div></pre></td></tr></table></figure>
+<p>【案例：五角星评分案例.html】</p>
+<h2 id="3-2-each方法"><a href="#3-2-each方法" class="headerlink" title="3.2. each方法"></a>3.2. each方法</h2><blockquote>
+<p>jQuery的隐式迭代会对所有的DOM对象设置相同的值，但是如果我们需要给每一个对象设置不同的值的时候，就需要自己进行迭代了。</p>
+</blockquote>
+<p>作用：遍历jQuery对象集合，为每个匹配的元素执行一个函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 参数一表示当前元素在所有匹配元素中的索引号</div><div class="line">// 参数二表示当前元素（DOM对象）</div><div class="line">$(selector).each(function(index,element)&#123;&#125;);</div></pre></td></tr></table></figure>
+<p>【案例：不同的透明度.html】</p>
+<h2 id="3-3-多库共存"><a href="#3-3-多库共存" class="headerlink" title="3.3. 多库共存"></a>3.3. 多库共存</h2><blockquote>
+<p>jQuery使用$作为标示符，但是如果与其他框架中的$冲突时，jQuery可以释放$符的控制权.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var c = $.noConflict();//释放$的控制权,并且把$的能力给了c</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/16/jq/" data-id="cj6fr87or0000t0l1zsfg0xf6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/git/" style="font-size: 10px;">git</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/16/jq/">jq</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Sokha Ye<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
